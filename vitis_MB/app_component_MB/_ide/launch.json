@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "tcf-debug",
+      "request": "launch",
+      "name": "app_component_MB_app_hw_1",
+      "debugType": "baremetal-zynq",
+      "attachToRunningTargetOptions": {
+        "targetSetupMode": "standalone",
+        "executeScript": true,
+        "scriptPath": ""
+      },
+      "autoAttachProcessChildren": false,
+      "target": {
+        "targetConnectionId": "Local",
+        "peersIniPath": "../../_ide/.peers.ini",
+        "context": "zynq"
+      },
+      "pathMap": [],
+      "targetSetup": {
+        "resetSystem": true,
+        "programDevice": true,
+        "resetAPU": false,
+        "bitstreamFile": "${workspaceFolder}/app_component_MB/_ide/bitstream/design_2_wrapper.bit",
+        "zynqInitialization": {
+          "isFsbl": false,
+          "usingFSBL": {
+            "initWithFSBL": true,
+            "fsblFile": "${workspaceFolder}/platform_MB/export/platform_MB/sw/boot/fsbl.elf",
+            "fsblExitSymbol": "FsblHandoffJtagExit"
+          },
+          "usingPs7Init": {
+            "runPs7Init": true,
+            "runPs7PostInit": true,
+            "ps7InitTclFile": "${workspaceFolder}/app_component_MB/_ide/psinit/ps7_init.tcl"
+          }
+        },
+        "downloadElf": [
+          {
+            "core": "microblaze_0",
+            "resetProcessor": true,
+            "elfFile": "${workspaceFolder}/app_component_MB/build/app_component_MB.elf",
+            "stopAtEntry": false
+          }
+        ],
+        "crossTriggerBreakpoints": {
+          "isSelected": false,
+          "breakpoints": []
+        }
+      },
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}

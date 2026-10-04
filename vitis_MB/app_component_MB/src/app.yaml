@@ -1,0 +1,4 @@
+domain_path: /home/taras/Yaroslav_Glek/project_4/vitis_MB/platform_MB/export/platform_MB/sw/standalone_microblaze_0
+app_src_dir: /tools/Xilinx/Vitis/2024.2/data/embeddedsw/lib/sw_apps/empty_application
+template: empty_application
+lang: c
